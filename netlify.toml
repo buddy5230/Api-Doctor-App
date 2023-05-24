@@ -1,5 +1,3 @@
 [build]
     functions = "route"
 
-[dev]
-  publish = "dist"
