@@ -5,6 +5,7 @@ let jwt = require("jsonwebtoken");
 const secretKey = "nothing";
 let userSchema = require("../models/user");
 const bcrypt = require("bcrypt");
+const serverless = require('serverless-http');
 
 router.route("/").get((req, res, next) => {
   userSchema
@@ -114,5 +115,5 @@ router.route("/update/:id").put((req, res, next) => {
       return next(error);
     });
 });
-
-module.exports = router;
+app.use('/.netlify/route/user.route',router);
+module.exports.handler = serverless;
