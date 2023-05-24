@@ -2,7 +2,7 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
-
+const Book = require("./models/books");
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -18,6 +18,17 @@ const connectDB = async () => {
   }
 }
 
+app.get('/books', async (req,res)=> {
+
+    const book = await Book.find();
+  
+    if (book) {
+      res.json(book)
+    } else {
+      res.send("Something went wrong.");
+    }
+    
+  });
 //Routes go here
 app.get('/', (req,res) => {
     res.send({ title: 'Books' });
