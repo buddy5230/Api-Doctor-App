@@ -7,7 +7,7 @@ let express = require('express'),
     path = require('path');
 
 // Express Route
-const userRoute = require('../doctor-api/route/user.route');
+const userRoute = require('./route/user_route');
 
 // Connecting MongDB Database
 mongoose.Promise = global.Promise;

@@ -7,7 +7,12 @@ let userSchema = require("../models/user");
 const bcrypt = require("bcrypt");
 const serverless = require('serverless-http');
 const app = express();
-router.route("/").get((req, res, next) => {
+router.get("/", (req, res) => {
+  res.json({
+    hello: "hi!"
+  });
+});
+/*router.route("/").get((req, res, next) => {
   userSchema
     .find()
     .then((data) => {
@@ -17,7 +22,7 @@ router.route("/").get((req, res, next) => {
     .catch((error) => {
       return next(error);
     });
-});
+});*/
 // get ข้อมูล user เดียว
 router.route("/:id").get((req, res, next) => {
   userSchema
@@ -115,6 +120,6 @@ router.route("/update/:id").put((req, res, next) => {
       return next(error);
     });
 });
-app.use('/.netlify/route/user.route', router);
+app.use('/.netlify/route/user_route', router);
 module.exports = app;
 module.exports.handler = serverless(app);
