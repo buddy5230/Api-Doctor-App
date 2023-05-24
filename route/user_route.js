@@ -7,11 +7,7 @@ let userSchema = require("../models/user");
 const bcrypt = require("bcrypt");
 const serverless = require('serverless-http');
 const app = express();
-router.get("/", (req, res) => {
-  res.json({
-    hello: "hi!"
-  });
-});
+
 router.route("/").get((req, res, next) => {
   userSchema
     .find()
