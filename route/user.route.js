@@ -115,5 +115,5 @@ router.route("/update/:id").put((req, res, next) => {
       return next(error);
     });
 });
-app.use('/.netlify/route/user.route',router);
-module.exports.handler = serverless;
+app.use('/.netlify/route/user.route', router);
+module.exports.handler = serverless(app);
