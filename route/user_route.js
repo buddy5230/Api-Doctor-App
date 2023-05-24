@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     hello: "hi!"
   });
 });
-/*router.route("/").get((req, res, next) => {
+router.route("/").get((req, res, next) => {
   userSchema
     .find()
     .then((data) => {
@@ -119,7 +119,7 @@ router.route("/update/:id").put((req, res, next) => {
     .catch((error) => {
       return next(error);
     });
-});*/
-app.use('/.netlify/route/user_route', router);
+});
+//app.use('/.netlify/route/user_route', router);
 module.exports = app;
-module.exports.handler = serverless(app);
+//module.exports.handler = serverless(app);
