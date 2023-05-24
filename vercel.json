@@ -1,17 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@now/node"
-    }
-  ],
-  "routes": [
-    
-      { "src": "/database", "dest": "/db.js" },
-      { "src": "/models", "dest": "/user.js" },
-      { "src": "/route", "dest": "/user.route.js" },
-      { "src": "/(.*)", "dest": "/server.js" }  
-    
-   ]
+
+  "rewrites": [{ "source": "/(.*)", "destination": "/userRoute" }]
+
 }
