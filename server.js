@@ -11,7 +11,8 @@ const userRoute = require('./route/user_route');
 
 // Connecting MongDB Database
 mongoose.Promise = global.Promise;
-mongoose.connect(dbConfig.db, {
+mongoose.connect(process.env.db);
+/*mongoose.connect(dbConfig.db, {
     useNewUrlParser: true,
     // useUnifiedTopology: true
 }).then(() => {
@@ -20,7 +21,7 @@ mongoose.connect(dbConfig.db, {
     error => {
         console.log('Could not connect to database: ' + error)
     }
-)
+)*/
 
 const app = express();
 app.use(bodyParser.json());
