@@ -1,6 +1,6 @@
 
 
-const express = require('express')
+/*const express = require('express')
 const mongoose = require('mongoose')
 const Book = require("./models/books");
 
@@ -40,12 +40,14 @@ connectDB().then(() => {
     app.listen(PORT, () => {
         console.log("listening for requests");
     })
-})
-/*let express = require('express'),
+})*/
+
+
+let express = require('express'),
     mongoose = require('mongoose'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
-    dbConfig = require('./database/db');
+    //dbConfig = require('./database/db');
     // eslint-disable-next-line no-undef
     path = require('path');
 
@@ -54,8 +56,8 @@ const userRoute = require('./route/user_route');
 
 // Connecting MongDB Database
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.db);
-/*mongoose.connect(dbConfig.db, {
+
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     // useUnifiedTopology: true
 }).then(() => {
@@ -92,4 +94,4 @@ app.use(function(err, req, res, next) {
     console.error(err.message);
     if (!err.statusCode) err.statusCode = 500;
     res.status(err.statusCode).send(err.message);
-})*/
+})
