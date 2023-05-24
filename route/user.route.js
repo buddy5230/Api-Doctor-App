@@ -6,7 +6,7 @@ const secretKey = "nothing";
 let userSchema = require("../models/user");
 const bcrypt = require("bcrypt");
 const serverless = require('serverless-http');
-
+const app = express();
 router.route("/").get((req, res, next) => {
   userSchema
     .find()
