@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
     .catch((error) => {
       return next(error);
     });
-});*/
+});
 // get ข้อมูล user เดียว
 router.route("/:id").get((req, res, next) => {
   userSchema
@@ -119,7 +119,7 @@ router.route("/update/:id").put((req, res, next) => {
     .catch((error) => {
       return next(error);
     });
-});
+});*/
 app.use('/.netlify/route/user_route', router);
 module.exports = app;
 module.exports.handler = serverless(app);
