@@ -24,7 +24,7 @@ mongoose.connect(dbConfig.db, {
 )
 
 
-app.use("/api/user", userRoute);
+app.use("/", userRoute);
 
 app.use(express.static(path.join(__dirname, "./client/build")));
 
