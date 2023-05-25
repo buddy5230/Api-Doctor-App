@@ -48,7 +48,8 @@ let userSchema = new Schema({
     symtomps: {
         type: String
     },
-}, {
+    
+}, {versionKey: false },{
     collection: "users"
 })
 
