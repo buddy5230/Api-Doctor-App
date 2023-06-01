@@ -87,7 +87,7 @@ router.post("/login", (req, res) => {
           } else if (result) {
             //const token = jwt.sign({ userId: user._id }, secretKey);
             //console.log("token"+token)
-            res.send({ message: "เข้าสู่ระบบสำเร็จ", userId: user._id, jwttoken: token });
+            res.send({ message: "เข้าสู่ระบบสำเร็จ", userId: user._id});
           } else {
             res.send({ message: "เข้าสู่ระบบล้มเหลว" });
           }
