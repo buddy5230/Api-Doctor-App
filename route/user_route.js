@@ -1,8 +1,8 @@
-let mongoose = require("mongoose");
+//let mongoose = require("mongoose");
 let express = require("express");
 let router = express.Router();
 let jwt = require("jsonwebtoken");
-const secretKey = "nothing";
+//const secretKey = "nothing";
 let userSchema = require("../models/user");
 const bcrypt = require("bcrypt");
 
@@ -85,8 +85,9 @@ router.post("/login", (req, res) => {
             console.error(err);
             res.send({ message: "การเข้าสู่ระบบล้มเหลว" });
           } else if (result) {
-            const token = jwt.sign({ userId: user._id }, secretKey);
-            res.send({ message: "เข้าสู่ระบบสำเร็จ", userId: user._id, token });
+            //const token = jwt.sign({ userId: user._id }, secretKey);
+            //console.log("token"+token)
+            res.send({ message: "เข้าสู่ระบบสำเร็จ", userId: user._id, jwttoken: token });
           } else {
             res.send({ message: "เข้าสู่ระบบล้มเหลว" });
           }
