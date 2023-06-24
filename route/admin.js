@@ -1,6 +1,5 @@
 const express = require('express');
 const userSchemaVac = require('../models/vaccine');
-
 const router = express();
 
 router.route('/his').get((req, res, next) => {
